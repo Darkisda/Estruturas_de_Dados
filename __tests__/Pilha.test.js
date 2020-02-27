@@ -44,7 +44,7 @@ test("TestePeek2", ()=> {
 })
 */
 
-/*
+
 test("TestePrint", ()=> {
     pilha.push(4)
     pilha.push(6)
@@ -69,4 +69,4 @@ test("TestePrint", ()=> {
 
     pilha.print()
 })
-*/
+

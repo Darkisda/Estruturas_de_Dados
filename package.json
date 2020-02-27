@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-		"docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "Luan de Souza",

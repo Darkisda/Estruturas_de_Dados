@@ -1,9 +1,13 @@
 import Pilha from "../src/Pilha"
-import { TestScheduler } from "jest"
 
-let pilha = new Pilha(5) //Designando um novo valor para o tamanho da pilha
+let pilha
 
-/*
+beforeEach(()=>{
+    pilha = new Pilha(5)  //Designando um novo valor para o tamanho da pilha
+
+})
+
+
 test("TestePush", ()=> {
     
     pilha.push(1)
@@ -17,9 +21,7 @@ test("TestePush", ()=> {
     }).toThrowError("Overflow")
 
 })
-*/
 
-/*
 test("TestePop", ()=> {
     
     expect(()=>{
@@ -27,12 +29,13 @@ test("TestePop", ()=> {
     }).toThrowError("Underflow")
 
 })
-*/
 
-/*
+
 test("TestePeek1", ()=> {
  
-    pilha.peek()
+    expect(()=>{
+        pilha.peek()
+    }).toThrowError("Empty")
 })
 
 
@@ -40,10 +43,8 @@ test("TestePeek1", ()=> {
 test("TestePeek2", ()=> {
     pilha.push(3)
 
-    pilha.peek()
+    expect(pilha.peek()).toBe(3)
 })
-*/
-
 
 test("TestePrint", ()=> {
     pilha.push(4)

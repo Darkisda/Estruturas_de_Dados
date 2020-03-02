@@ -20,7 +20,7 @@ test("FilaTeste", ()=>{
     fila.enqueue("E")
     expect(()=>{
         fila.enqueue("F")
-    }).toThrowError("Overflow")
+    }).toThrowError("Queue is full")
     expect(fila.dequeue()).toBe("A")
     expect(fila.dequeue()).toBe("B")
     expect(fila.dequeue()).toBe("C")
@@ -28,6 +28,6 @@ test("FilaTeste", ()=>{
     expect(fila.dequeue()).toBe("E")
     expect(()=> {
         fila.dequeue()
-    }).toThrowError("Underflow")
+    }).toThrowError("Queue is empty")
     expect(fila.size()).toBe(0)
 })

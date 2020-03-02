@@ -32,7 +32,7 @@ class Pilha {
     }
 
     /**
-     * Remove um dado da pilha
+     * Remove último dado da pilha
      * @returns {any} Elemento removido
      * @throws {Error} Será lançado um erro caso a pilha esteja vazia
      */
@@ -66,7 +66,7 @@ class Pilha {
     print() {
         let resultado = "["
 
-        for(let i = 0 ; i< this.topo ; i ++) resultado += ` ${this.dados[i]}, `
+        for(let i = 0 ; i< this.topo +1 ; i ++) resultado += ` ${this.dados[i]}, `
 
         resultado += "]"
 
@@ -94,6 +94,22 @@ class Pilha {
      */
     size() {
         return this.topo +1
+    }
+
+    /**
+     * Troca de lugar o elemento do topo da pilha, com oque está em último
+     */
+    troca(){
+        let auxiliar
+
+        if(this.isEmpty()){
+            throw new Error ("Empty")
+        }
+        else {
+            auxiliar = this.dados[this.topo]
+            this.dados[this.topo] = this.dados[0]
+            this.dados[0] = auxiliar
+        }
     }
 }
 

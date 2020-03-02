@@ -7,7 +7,7 @@ beforeEach(()=>{
 
 })
 
-
+/*
 test("TestePush", ()=> {
     
     pilha.push(1)
@@ -70,4 +70,15 @@ test("TestePrint", ()=> {
 
     pilha.print()
 })
+*/
 
+test("Troca", ()=>{
+    pilha.push(1)
+    pilha.push(2)
+    pilha.push(3)
+    pilha.push(4)
+    pilha.push(5)
+    pilha.print()
+    pilha.troca()
+    pilha.print()
+})

@@ -25,7 +25,7 @@ class Fila {
      */
     enqueue(novoDado){
         if(this.isFull()) {
-            throw new Error ("Overflow")
+            throw new Error ("Queue is full")
         }
         else {
             return this.dados[this.final++] = novoDado
@@ -40,7 +40,7 @@ class Fila {
      */
     dequeue(){
         if(this.isEmpty()){
-            throw new Error ("Underflow")
+            throw new Error ("Queue is empty")
         }
         else {
             return this.dados[this.inicio++]
@@ -54,7 +54,7 @@ class Fila {
      */
     front(){
         if(this.isEmpty()){
-            return new Error("Underflow")
+            return new Error("Queue is Empty")
         }
         else {
             return this.dados[this.inicio]

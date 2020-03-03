@@ -65,7 +65,7 @@ test("Size", ()=> {
     filaCircular.clear()
     expect(filaCircular.size()).toBe(0)
 })
-
+/*
 test("VaiDaCerto", ()=>{
     filaCircular.enqueue("A")
     filaCircular.enqueue("T")
@@ -92,4 +92,4 @@ test("VaiDaCerto", ()=>{
     }).toThrowError("Queue is full")
 
     filaCircular.toString()
-})
+})*/

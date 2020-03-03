@@ -54,6 +54,16 @@ class PilhaDeFila{
     size(){
         return this.topo+1
     }
+
+    print() {
+        let resultado = "["
+
+        for(let i = 0 ; i< this.topo +1 ; i ++) resultado += ` ${this.dados[i]}, `
+
+        resultado += "]"
+
+        return console.log(resultado)
+    }
 }
 
 export default PilhaDeFila

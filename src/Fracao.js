@@ -9,28 +9,36 @@ class Fracao{
         this.denominador = denominador
     }
     
-    multiplicacao(numeradorMultiplicacao, denominadorMultiplicacao = 1){
-        let numeradorResposta = numeradorMultiplicacao * this.numerador
-        let denominadorResposta = denominadorMultiplicacao * this.denominador
+    multiplicacao(fracao){
+        let numeradorResposta = fracao.numerador * this.numerador
+        let denominadorResposta = fracao.denominador * this.denominador
 
         if(denominadorResposta === 0) {
             return console.log("Denominador é igual a 0")
         }
         else {
-            return console.log(`${numeradorResposta}` + "/" + `${denominadorResposta}`)
+            let fracaoResposta = new Fracao(numeradorResposta, denominadorResposta)
+
+            this.print(fracaoResposta)
         }
     }
 
-    divisao(numeradorDiviao, denominadorDivisao = 1){
-        let numeradorResposta = numeradorDiviao * this.denominador
-        let denominadorResposta = denominadorDivisao * this.numerador
+    divisao(fracao){
+        let numeradorResposta = fracao.numerador * this.denominador
+        let denominadorResposta = fracao.denominador * this.numerador
 
         if(denominadorResposta === 0) {
             return console.log("Denominador é igual a 0")
         }
         else {
-            return console.log(`${numeradorResposta}` + "/" + `${denominadorResposta}`)
+            let fracaoResposta = new Fracao(numeradorResposta, denominadorResposta)
+
+            this.print(fracaoResposta)
         }
+    }
+
+    print(fracao){
+        return console.log(`${fracao.numerador}` + "/" + `${fracao.denominador}`)
     }
 }
 

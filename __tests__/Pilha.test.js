@@ -3,7 +3,7 @@ import Pilha from "../src/Pilha"
 let pilha
 
 beforeEach(()=>{
-    pilha = new Pilha(5)  //Designando um novo valor para o tamanho da pilha
+    pilha = new Pilha(7)  //Designando um novo valor para o tamanho da pilha
 
 })
 
@@ -73,12 +73,13 @@ test("TestePrint", ()=> {
 */
 
 test("Troca", ()=>{
-    pilha.push(1)
-    pilha.push(2)
-    pilha.push(3)
-    pilha.push(4)
-    pilha.push(5)
+    pilha.push("A")
+    pilha.push("B")
+    pilha.push("C")
+    pilha.push("D")
+    pilha.push("E")
+    pilha.push("F")
+    pilha.push("G")
     pilha.print()
     pilha.troca()
-    pilha.print()
 })

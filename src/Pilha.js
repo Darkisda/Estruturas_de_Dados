@@ -100,15 +100,31 @@ class Pilha {
      * Troca de lugar o elemento do topo da pilha, com oque está em último
      */
     troca(){
-        let auxiliar
 
+        let final = new Pilha(this.maxTamanho)
+        let auxiliar = new Pilha(this.maxTamanho)
+        
         if(this.isEmpty()){
             throw new Error ("Empty")
         }
         else {
-            auxiliar = this.dados[this.topo]
-            this.dados[this.topo] = this.dados[0]
-            this.dados[0] = auxiliar
+
+            final.push(this.peek())
+            this.pop()
+            
+            while(this.maxTamanho != (this.topo + this.maxTamanho)){
+                auxiliar.push(this.peek())
+                this.pop()
+            }
+
+            while(auxiliar.maxTamanho != (auxiliar.topo + auxiliar.maxTamanho + 1)){
+                final.push(auxiliar.peek())
+                auxiliar.pop()
+            }
+            
+            final.push(this.peek())
+
+            final.print()
         }
     }
 }

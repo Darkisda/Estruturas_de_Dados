@@ -1,11 +1,8 @@
-class FilaDupla{
+import Fila from "./Fila"
+
+class FilaDupla extends Fila{
     constructor(tamanho = 10){
-        this.dados = []
-        this.inicio = 0
-        this.final = 0
-        this.tamanhoMaximo = tamanho
-        this.anterior = 0
-        this.proximo = 0
+        super(tamanho)
     }
 
     /**TODO THIS FUCKING ALL CODE */
@@ -14,8 +11,14 @@ class FilaDupla{
         if(this.isFull()){
             throw new Error("Is Full")
         }
+        else if (this.inicio === 0) {
+            throw new Error ("Inicio cheio")
+        }
+        else if (this.isEmpty()){
+            this.inicio = this.final = 0
+        }
         else {
-            return this.dados[this.final++] = novoDado
+            this.dados[this.inicio++] = novoDado
         }
     }
 
@@ -24,27 +27,34 @@ class FilaDupla{
         if(this.isFull()){
             throw new Error("Is Full")
         }
-        else {
-            return this.dados[--this.auxiliar] = novoDado
+        else if(this.isEmpty()){
+            this.inicio = this.final = 0
         }
+        this.dados[this.final++] = novoDado
     }
 
     removerInicio(){
         if(this.isEmpty()){
-            throw new Error("Is Empty")
+            throw new Error("Underflow")
         }
-        else {
-            return this.dados[--this.inicio]
+        else if(this.size() === 1) {
+            let temp = this.inicio
+            this.inicio = this.final = -1
+            return this.dados[temp]
         }
+        return this.dado[this.inicio++]
     }
 
     removerFinal(){
         if(this.isEmpty()){
-            throw new Error("Is Empty")
+            throw new Error ("Underflow")
         }
-        else {
-            return this.dados[this.auxiliar--]
+        else if(this.size()===1){
+            let temp = this.final
+            this.inicio = this.final = -1
+            return this.dados[temp]
         }
+        return this.dados[this.final--]
     }
 
 

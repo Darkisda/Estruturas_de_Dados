@@ -7,16 +7,14 @@ beforeEach(()=>{
 })
 
 test("Fila Dupla", ()=> {
-    filadupla.inserirInicio("A")
+    filadupla.enqueue("A")
     filadupla.inserirFinal("B")
-    filadupla.inserirInicio("C")
-    filadupla.inserirFinal("D")
-    filadupla.inserirInicio("E")
-
-    filadupla.print()
-
+    filadupla.inserirFinal("C")
+    filadupla.enqueue("d")
     filadupla.removerFinal()
-    filadupla.removerInicio()
-
+    filadupla.inserirFinal("f")
+    filadupla.enqueue("D")
+    filadupla.dequeue()
+ 
     filadupla.print()
 })

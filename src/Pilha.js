@@ -96,6 +96,10 @@ class Pilha {
         return this.topo +1
     }
 
+    isFull() {
+		return this.size() === this.maxTamanho;
+    }
+
     /**
      * Troca de lugar o elemento do topo da pilha, com oque está em último
      */
@@ -126,6 +130,20 @@ class Pilha {
 
             final.print()
         }
+    }
+
+    decToBin(numero){
+        let pilha = new Pilha(8)
+
+        for (let i = 0; i <8; i++){
+            pilha.push(parseInt(numero % 2))
+            numero /= 2
+        }
+        for (let i = 0; i<8; i++) {
+            this.push(pilha.pop())
+        }
+
+        this.print()
     }
 }
 

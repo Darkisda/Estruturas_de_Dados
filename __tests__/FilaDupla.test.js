@@ -14,7 +14,5 @@ test("Fila Dupla", ()=> {
     filadupla.removerFinal()
     filadupla.inserirFinal("f")
     filadupla.enqueue("D")
-    filadupla.dequeue()
- 
-    filadupla.print()
+    expect(filadupla.front()).toBe("A")
 })

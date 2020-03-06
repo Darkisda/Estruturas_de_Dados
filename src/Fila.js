@@ -28,7 +28,7 @@ class Fila {
             throw new Error ("Queue is full")
         }
         else {
-            return this.dados[this.final++] = novoDado
+            this.dados[this.final++] = novoDado
         }
     
     }
@@ -83,6 +83,10 @@ class Fila {
      */
     isFull(){
         return this.size() === this.tamanhoMaximo
+    }
+    
+    clear(){
+        return this.inicio = this.final
     }
 }
 

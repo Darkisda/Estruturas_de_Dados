@@ -6,8 +6,8 @@ class PilhaDeFila{
         this.maxTamanho = tamanho
         this.dados = []
         this.topo = -1
-        this.fila1 = new Fila()
-        this.fila2 = new Fila()
+        this.fila1 = new Fila(tamanho)
+        this.fila2 = new Fila(tamanho)
     }
 
     push(novoDado){

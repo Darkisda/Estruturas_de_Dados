@@ -7,10 +7,10 @@ beforeEach(()=>{
 })
 
 test("Fila de pilha", ()=>{
-    filadepilha.enqueue(5)
     filadepilha.enqueue("A")
-    filadepilha.enqueue("s")
-    filadepilha.print()
+    expect(filadepilha.front()).toBe("A")
+    filadepilha.enqueue("B")
+    filadepilha.enqueue("C")
     filadepilha.dequeue()
-    filadepilha.print()
+    expect(filadepilha.front()).toBe("B")
 })

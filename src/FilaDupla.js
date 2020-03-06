@@ -3,23 +3,31 @@ import Fila from "./Fila"
 class FilaDupla extends Fila{
     constructor(tamanho = 10){
         super(tamanho)
+        this.aux = new Fila(tamanho)
     }
 
-    /**TODO THIS FUCKING ALL CODE */
 
     inserirInicio(novoDado){
         if(this.isFull()){
             throw new Error("Is Full")
         }
-        else if (this.inicio === 0) {
-            throw new Error ("Inicio cheio")
+        if(this.isEmpty()){
+            this.enqueue(novoDado)
         }
-        else if (this.isEmpty()){
-            this.inicio = this.final = 0
+        while(!this.isEmpty()){
+            this.aux.enqueue(this.front())
+            this.dequeue()
         }
-        else {
-            this.dados[this.inicio++] = novoDado
+
+        this.clear()
+        this.enqueue(novoDado)
+
+        while(!this.aux.isEmpty()){
+            this.enqueue(this.aux.front())
+            this.aux.dequeue()
         }
+
+        this.clear()
     }
 
     inserirFinal(novoDado){
@@ -30,54 +38,36 @@ class FilaDupla extends Fila{
         else if(this.isEmpty()){
             this.inicio = this.final = 0
         }
-        this.dados[this.final++] = novoDado
+        this.enqueue(novoDado)
     }
 
     removerInicio(){
         if(this.isEmpty()){
             throw new Error("Underflow")
         }
-        else if(this.size() === 1) {
-            let temp = this.inicio
-            this.inicio = this.final = -1
-            return this.dados[temp]
+        else {
+            return this.dequeue()
         }
-        return this.dado[this.inicio++]
     }
 
     removerFinal(){
         if(this.isEmpty()){
             throw new Error ("Underflow")
         }
-        else if(this.size()===1){
-            let temp = this.final
-            this.inicio = this.final = -1
-            return this.dados[temp]
+        else {
+            for(let i = 0; i<this.size()-1; i++){
+                this.aux.enqueue(this.dequeue())
+            }
+            let resposta =  this.dequeue()
+            this.clear()
+
+            while(!this.aux.isEmpty()){
+                this.enqueue(this.aux.dequeue())
+            }
+            this.aux.clear()
+
+            return resposta
         }
-        return this.dados[this.final--]
-    }
-
-
-    print(){
-        let resposta = "["
-
-        for(let i = 0; i< this.tamanhoMaximo; i++) resposta += `${this.dados[i]}, `
-
-        resposta += "]"
-
-        return console.log(resposta)
-    }
-
-    isEmpty(){
-        return this.final === this.inicio
-    }
-
-    isFull(){
-        return this.size() === this.tamanhoMaximo
-    }
-
-    size(){
-        return this.final - this.inicio
     }
 }
 

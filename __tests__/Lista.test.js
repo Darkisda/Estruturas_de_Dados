@@ -13,6 +13,6 @@ test("Testando", ()=> {
     lista.add("D")
     lista.add("E")
 
+    lista.embaralhar()
     lista.toString()
-    lista.inverter()
 })

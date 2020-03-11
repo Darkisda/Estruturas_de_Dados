@@ -11,4 +11,6 @@ test("Teste", ()=> {
     ls.add("B")
     ls.add("C")
 
+    ls.print()
+
 })

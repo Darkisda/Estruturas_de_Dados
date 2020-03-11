@@ -71,7 +71,7 @@ class Lista {
             tmp = tmp.proximo
         }
 
-        return txt
+        return console.log(txt)
     }
 
     size() {
@@ -156,6 +156,27 @@ class Lista {
             novo_no.proximo = null
             return
         }
+    }
+
+    top(){ 
+        if(this.isEmpty()){
+            throw new Error("A lista está vazia")
+        }
+        let aux_a = this.head
+        let aux_b = this.head.proximo
+
+        while(aux_b.proximo !== null) {
+            aux_a = aux_b
+            aux_b = aux_b.proximo
+        }
+
+        return aux_b.dado
+    }
+
+    inverter() {
+        let aux = new Lista()
+        while(!this.head.proximo !== null)
+        aux.toString()
     }
 }
 

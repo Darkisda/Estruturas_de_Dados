@@ -48,14 +48,18 @@ class Lista {
         }
         let aux_a = this.head
         let aux_b = this.head.proximo
+        let final
 
         while(aux_b.proximo !== null) {
             aux_a = aux_b
             aux_b = aux_b.proximo
         }
+        final = aux_b.dado
 
         aux_b = null
         aux_a.proximo = null
+
+        return final
     }
 
     isEmpty() {
@@ -174,9 +178,22 @@ class Lista {
     }
 
     inverter() {
-        let aux = new Lista()
-        while(!this.head.proximo !== null)
-        aux.toString()
+        let aux = this.head
+        let final = new Lista()
+        while(aux.proximo !== null) {
+            aux = aux.proximo
+            final.add(aux.dado)
+        }
+
+        final.toString()
+    }
+
+    embaralhar() { 
+        for (let i = 0; i < this.size(); i++) {
+            this.addAt(Math.floor(Math.random() * this.size()), this.removeEnd())
+        }
+
+        return
     }
 }
 

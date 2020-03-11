@@ -10,7 +10,6 @@ class ListaSimples {
     add(novoDado) {
         this.dado.atual = novoDado
         this.dados[++this.topo] = this.dado.atual
-        console.log(this.dado)
     }
 
     print() {

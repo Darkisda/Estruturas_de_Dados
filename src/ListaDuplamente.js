@@ -134,6 +134,23 @@ class ListaDuplamente {
             return false
         }
     }
+
+    substring(de, ate) {
+        
+    }
+
+    toDuble(listaSimples){
+        let listaDuplamente = new ListaDuplamente()
+
+        let tmp = lista.head.proximo
+
+        while(tmp.proximo !== null) {
+            listaDuplamente = lista
+            lista = lista.proximo
+        }
+
+        return listaDuplamente
+    }
 }
 
 export default ListaDuplamente

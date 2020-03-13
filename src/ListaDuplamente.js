@@ -75,7 +75,7 @@ class ListaDuplamente {
             tmp = tmp.proximo
         }
 
-        return txt
+        return console.log(txt)
     }
 
     size() {
@@ -135,21 +135,17 @@ class ListaDuplamente {
         }
     }
 
-    substring(de, ate) {
-        
-    }
-
-    toDuble(listaSimples){
+    toDouble(listaSimples){
         let listaDuplamente = new ListaDuplamente()
 
-        let tmp = lista.head.proximo
+        let tmp = listaSimples.head.proximo
 
-        while(tmp.proximo !== null) {
-            listaDuplamente = lista
-            lista = lista.proximo
+        while(tmp !== null) {
+            listaDuplamente.add(tmp.dado)
+            tmp = tmp.proximo
         }
 
-        return listaDuplamente
+        return listaDuplamente.toString()
     }
 }
 

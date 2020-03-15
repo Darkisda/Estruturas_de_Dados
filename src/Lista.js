@@ -32,6 +32,25 @@ class Lista {
         }
     }
 
+    getAt(index) {
+        if(this.head.proximo == null) {
+            return null
+        }
+        else {
+            let cont = 0
+            let atual = this.head.proximo
+            while (cont <= index) {
+                if(cont == index) {
+                    return atual.dado
+                }
+
+                atual = atual.proximo
+                cont++
+            }
+        }
+        return null
+    }
+
     removeBeginning() {
         if(this.isEmpty()) {
             throw new Error ("A lista está vazia")
@@ -175,25 +194,6 @@ class Lista {
         }
 
         return aux_b.dado
-    }
-
-    inverter() {
-        let aux = this.head
-        let final = new Lista()
-        while(aux.proximo !== null) {
-            aux = aux.proximo
-            final.add(aux.dado)
-        }
-
-        final.toString()
-    }
-
-    embaralhar() { 
-        for (let i = 0; i < this.size(); i++) {
-            this.addAt(Math.floor(Math.random() * this.size()), this.removeEnd())
-        }
-
-        return
     }
 }
 

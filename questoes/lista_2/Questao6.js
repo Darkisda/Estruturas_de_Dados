@@ -1,13 +1,10 @@
-### QUESTAO 
+import Lista from '../../src/Lista'
 
-
-import Lista from './Lista'
-
-class ListaString extends Lista {
+class Questao6 extends Lista {
     constructor(){
         super()
     }
-    
+
     substring(from, to){
         let aux = new Lista()
         let cont = 0
@@ -33,26 +30,4 @@ class ListaString extends Lista {
     }
 }
 
-export default ListaString
-
-
-### TESTE
-
-import ListaString from '../src/ListaString'
-
-let ls = new ListaString()
-
-test("Teste String", ()=>{
-    ls.add('a')
-    ls.add('b')
-    ls.add('c')
-    ls.add('d')
-    ls.add('e')
-    ls.add('f')
-
-    ls.substring(2, 6)
-    
-    expect(()=> {
-        ls.substring(0, 10)
-    }).toThrowError("Limite Inválido")
-})
+export default Questao6

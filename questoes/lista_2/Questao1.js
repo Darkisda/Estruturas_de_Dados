@@ -1,6 +1,4 @@
-### Questão 1
-
-import Lista from './Lista'
+import Lista from '../../src/Lista'
 
 class PilhaDinamica {
     constructor(){
@@ -34,26 +32,3 @@ class PilhaDinamica {
     }
 }
 export default PilhaDinamica
-
-
-### Testes
-
-import PilhaDinamica from "../src/PilhaDinamica"
-
-let pd
-
-beforeEach(()=>{
-    pd = new PilhaDinamica()
-})
-
-test("Pilha Dinamica", ()=> {
-    pd.push("A")
-    pd.push("B")
-    pd.push("C")
-    pd.push("D")
-    expect(pd.toString()).toBe("[A, B, C, D, ]")
-    pd.pop()
-    pd.push("E")
-    expect(pd.toString()).toBe("[A, B, C, E, ]")
-    expect(pd.peek()).toBe("E")
-})

@@ -1,5 +1,11 @@
-### Questão 4
+import Lista from '../../src/Lista'
 
+class Questao4 extends Lista {
+    constructor() {
+        super()
+    }
+
+    
     inverter() {
         let aux = this.head
         let final = new Lista()
@@ -10,3 +16,6 @@
 
         final.toString()
     }
+}
+
+export default Questao4

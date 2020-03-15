@@ -1,8 +1,8 @@
 import Lista from './Lista'
 
-class Pessoa extends Lista {
+class Pessoa {
     constructor() {
-        super()
+        this.lista = new Lista()
         this.nome
         this.idade
     }
@@ -17,33 +17,37 @@ class Pessoa extends Lista {
             this.idade = valor1
         }
 
-        this.add([this.nome, this.idade])
+        this.lista.add([this.nome, this.idade])
     }
 
     alfabetica(){
-        let alfabetica = new Lista()
+        let listaAlfabetica = new Lista()
+        let tmp = this.lista.head.proximo
 
-        for(let i =0; i<this.size(); i++) {
-            let tmp = this.head.proximo
-            
-            
-            while(tmp.proximo !== null) {
-                
-                if(alfabetica.search(tmp.dado[0])){
-                    tmp = tmp.proximo
-                }
-                else if(tmp.dado[0].charAt() <= tmp.proximo.dado[0]){
-                    alfabetica.add(tmp.dado)
-                }
-                else {
-                    alfabetica.add(tmp.proximo.dado)
-                }
+        console.log(tmp.proximo.dado[0])
+        console.log(tmp.proximo.dado[0].charAt())
+
+        while (tmp.proximo !== null) {
+
+            console.log(tmp.dado)
+
+            if(tmp.dado[0].charAt() < tmp.proximo.dado[0].charAt()) {
+                listaAlfabetica.add(tmp.dado)
+            } 
+            else{
+                listaAlfabetica.add(tmp.proximo.dado)
             }
 
             tmp = tmp.proximo
         }
 
-        alfabetica.toString()
+        return listaAlfabetica.toString()
+    }
+
+    numerica(){
+        let listaNumerica = new Lista()
+
+        return listaNumerica.toString()
     }
 }
 
